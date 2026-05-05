@@ -10,7 +10,7 @@ public class Controller {
 
 	@GetMapping("/api/hi/{param}")
 	public String controllerEndpoint(@PathVariable String param) {
-		return "Hi".concat(param);
+		return "Hi ".concat(param);
 	}
 
 }
