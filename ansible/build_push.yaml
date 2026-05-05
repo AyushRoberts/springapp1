@@ -14,7 +14,7 @@
 
     - name: Build Docker image
       shell: |
-        docker build -t {{ image_name }}:{{ image_tag }} .
+        docker build -t {{ image_name }}:{{ image_tag }} ..
 
     - name: Push Docker image
       shell: |
