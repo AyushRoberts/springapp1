@@ -2,8 +2,10 @@
 - name: Build and Push Docker Image
   hosts: jenkins
   vars:
-    image_name: yourdockerhubusername/springapp
+    image_name: ayushrobets/springapp
     image_tag: latest
+    docker_user: "{{ lookup('env','DOCKER_USER') }}"
+    docker_pass: "{{ lookup('env','DOCKERHUB_TOKEN') }}"
 
   tasks:
     - name: Login to Docker Hub

@@ -4,7 +4,7 @@
   become: yes
 
   vars:
-    image_name: yourdockerhubusername/springapp
+    image_name: ayushrobets/springapp
     image_tag: latest
     container_name: springapp
 
