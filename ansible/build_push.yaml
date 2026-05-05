@@ -1,0 +1,19 @@
+---
+- name: Build and Push Docker Image
+  hosts: jenkins
+  vars:
+    image_name: yourdockerhubusername/springapp
+    image_tag: latest
+
+  tasks:
+    - name: Login to Docker Hub
+      shell: |
+        echo "{{ docker_pass }}" | docker login -u "{{ docker_user }}" --password-stdin
+
+    - name: Build Docker image
+      shell: |
+        docker build -t {{ image_name }}:{{ image_tag }} .
+
+    - name: Push Docker image
+      shell: |
+        docker push {{ image_name }}:{{ image_tag }}
